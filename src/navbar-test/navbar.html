@@ -1,0 +1,23 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar Test</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <section class="section">
+      <button class="button is-primary" id="indexRedirectButton">Index</button>
+
+      <script>
+        const button = document.getElementById("indexRedirectButton");
+        button.addEventListener("click", () => {
+          window.location.href = "../index/index.html";
+        });
+      </script>
+    </section>
+  </body>
+</html>

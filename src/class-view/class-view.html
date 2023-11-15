@@ -1,0 +1,282 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="../../styles/styles.css" />
+  </head>
+  <body class="has-navbar-fixed-top">
+    <!-- Nav Bar -->
+    <nav class="navbar has-shadow is-white is-fixed-top">
+      <!-- Navbar Brand -->
+      <div class="navbar-brand">
+        <a id="logoButton">
+          <h1 class="navbar-item title is-unselectable">Grade Tracker</h1>
+        </a>
+      </div>
+
+      <!-- Navbar Menu -->
+      <div class="navbar-menu" id="nav-links">
+        <div class="navbar-end">
+          <a class="navbar-item">My Account</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Section -->
+    <div class="columns is-fullheight-with-navbar">
+      <!-- Sidebar Column -->
+      <div class="column is-one-fifth is-unselectable">
+        <aside class="menu px-4 py-5">
+          <!-- Schedule Label -->
+          <p class="menu-label">Schedule</p>
+          <ul class="menu-list">
+            <li><a href="../home/home.html">Classes</a></li>
+            <li><a>Calendar</a></li>
+          </ul>
+
+          <!-- Calculators Label -->
+          <p class="menu-label">Calculators</p>
+          <ul class="menu-list">
+            <li><a>GPA Calculator</a></li>
+            <li><a>Grade Calculator</a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <!-- <link rel="import" href="./sidebar.html"> -->
+
+      <!-- Class Info Column -->
+      <div class="container m-6">
+        <nav class="level">
+          <!-- Level Left -->
+          <div class="level-left">
+            <div class="level-item">
+              <h1 class="title" id="classTitle"></h1>
+            </div>
+          </div>
+          <!-- Level Right -->
+          <div class="level-right box">
+            <div class="level-item mx-6">
+              <div>
+                <p class="subtitle is-6 py-1" id="yearText"><strong>Year:</strong></p>
+                <p class="subtitle is-6 py-1" id="semesterText"><strong>Semester:</strong></p>
+                <p class="subtitle is-6 py-1" id="locationText"><strong>Location:</strong></p>
+              </div>
+            </div>
+            <div class="level-item mx-6">
+              <div>
+                <p class="subtitle is-6 py-1" id="professorText"><strong>Professor:</strong></p>
+                <p class="subtitle is-6 py-1" id="creditsText"><strong>Credits:</strong></p>
+                <p class="subtitle is-6 py-1" id="gpaText"><strong>GPA:</strong></p>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+
+        <nav class="level mb-2">
+          <div class="level-left">
+            <div class="level-item">
+              <h2 class="subtitle">Grades</h2>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <button
+                class="button level-item has-icons-left"
+                id="refreshButton"
+              >
+                <span>
+                  <i class="fa-solid fa-arrows-rotate"></i>
+                  Refresh
+                </span>
+              </button>
+              <button class="button js-modal-trigger" id="addAssignmentButton" data-target="addAssignmentModal">
+                <span>
+                  <i class="fa-solid fa-plus"></i>
+                  Add
+                </span>
+              </button>
+            </div>
+          </div>
+        </nav>
+        <!-- Grade Table -->
+        <table class="table is-bordered is-hoverable is-fullwidth is-striped">
+          <thead>
+            <th>Edit</th>
+            <th>Assignment</th>
+            <th>Score</th>
+            <th>Total Score</th>
+            <th>Percent</th>
+            <th>Date Added</th>
+            <th>Date Due</th>
+          </thead>
+          <tbody id="gradeTable"></tbody>
+        </table>
+      </div>
+
+      <!-- Edit Assignment Modal -->
+      <div id="editAssignmentModal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <!-- Modal Header -->
+          <header class="modal-card-head">
+            <p class="modal-card-title">Edit Assignment</p>
+            <button class="delete" aria-label="close"></button>
+          </header>
+          <!-- Modal Body -->
+          <section class="modal-card-body">
+            <!-- Assignment Name -->
+            <div class="field">
+              <label class="label is-unselectable">Assignment Name</label>
+              <input
+                class="input"
+                id="nameInput"
+                type="text"
+                placeholder="Assignment Name"
+              />
+            </div>
+
+            <!-- Assignment Name -->
+            <div class="field">
+              <label class="label is-unselectable">Due Date</label>
+              <input
+                class="input"
+                id="dateDueInput"
+                type="date"
+                placeholder="Due Date"
+              />
+            </div>
+
+            <!-- Score -->
+            <div class="field">
+              <label class="label is-unselectable">Score</label>
+              <input
+                class="input"
+                id="scoreInput"
+                type="number"
+                placeholder="Score"
+              />
+            </div>
+
+            <!-- Total Score -->
+            <div class="field">
+              <label class="label is-unselectable">Total Score</label>
+              <input
+                class="input"
+                id="totalScoreInput"
+                type="number"
+                placeholder="Total Score"
+              />
+            </div>
+          </section>
+
+          <!-- Modal Footer -->
+          <footer class="modal-card-foot is-justify-content-space-between">
+            <!-- Submit Button -->
+            <div>
+              <button
+                class="button is-success"
+                type="submit"
+                id="saveButton"
+                data-target="addClassModal"
+              >
+                Save changes
+              </button>
+  
+              <!-- Cancel Button -->
+              <button class="button" id="cancelButton">Cancel</button>
+            </div>
+
+            <!-- Delete Button -->
+            <button class="button is-danger" id="assignDeleteButton">Delete</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Assignment Modal -->
+    <div id="addAssignmentModal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <!-- Modal Header -->
+        <header class="modal-card-head">
+          <p class="modal-card-title">Add Assignment</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <!-- Modal Body -->
+        <section class="modal-card-body">
+          <!-- Assignment Name -->
+          <div class="field">
+            <label class="label is-unselectable">Assignment Name</label>
+            <input
+              class="input"
+              id="nameAddInput"
+              type="text"
+              placeholder="Assignment Name"
+            />
+          </div>
+
+          <!-- Due Date Input -->
+          <div class="field">
+            <label class="label is-unselectable">Due Date</label>
+            <input
+              class="input"
+              id="dateDueAddInput"
+              type="date"
+              placeholder="Due Date"
+            />
+          </div>
+
+          <!-- Score -->
+          <div class="field">
+            <label class="label is-unselectable">Score</label>
+            <input
+              class="input"
+              id="scoreAddInput"
+              type="number"
+              placeholder="Score"
+            />
+          </div>
+
+          <!-- Total Score -->
+          <div class="field">
+            <label class="label is-unselectable">Total Score</label>
+            <input
+              class="input"
+              id="totalScoreAddInput"
+              type="number"
+              placeholder="Total Score"
+            />
+          </div>
+        </section>
+
+        <!-- Modal Footer -->
+        <footer class="modal-card-foot">
+          <button
+            class="button is-success"
+            type="submit"
+            id="submitAddAssignmentButton"
+            data-target="addClassModal"
+          >
+            Save changes
+          </button>
+          <button class="button" id="cancelButton">Cancel</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+    <script type="module" src="class-view.js"></script>
+    <script
+      src="https://kit.fontawesome.com/24aac3d09d.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,239 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="../../styles/styles.css" />
+  </head>
+  <body class="has-navbar-fixed-top">
+    <!-- Nav Bar -->
+    <nav class="navbar has-shadow is-white is-fixed-top">
+      <!-- Navbar Brand -->
+      <div class="navbar-brand">
+        <a id="logoButton">
+          <h1 class="navbar-item title is-unselectable">Grade Tracker</h1>
+        </a>
+      </div>
+
+      <!-- Mobile Burger -->
+      <div class="navbar-burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Navbar Menu -->
+      <div class="navbar-menu" id="nav-links">
+        <div class="navbar-end">
+          <a class="navbar-item">My Account</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Section -->
+    <div class="columns is-fullheight-with-navbar">
+      <!-- Sidebar Column -->
+      <div class="column is-one-fifth is-unselectable">
+        <aside class="menu px-4 py-5">
+          <!-- Schedule Label -->
+          <p class="menu-label">Schedule</p>
+          <ul class="menu-list">
+            <li><a class="is-active">Classes</a></li>
+            <li><a>Calendar</a></li>
+          </ul>
+
+          <!-- Calculators Label -->
+          <p class="menu-label">Calculators</p>
+          <ul class="menu-list">
+            <li><a>GPA Calculator</a></li>
+            <li><a>Grade Calculator</a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <!-- Add Column -->
+      <div class="container m-6">
+        <section class="column">
+          <!-- Search Level -->
+          <nav class="level">
+            <!-- Left Side -->
+            <div class="level-left">
+              <div class="level-item">
+                <!-- Search Bar Field -->
+                <div class="field has-addons">
+                  <p class="control has-icons-left">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="Find a class"
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                  </p>
+                  <p class="control">
+                    <button class="button">Search</button>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="level-right">
+              <button
+                class="button level-item has-icons-left"
+                id="refreshButton"
+              >
+                <span>
+                  <i class="fa-solid fa-arrows-rotate"></i>
+                  Refresh
+                </span>
+              </button>
+              <button
+                class="button level-item has-icons-left"
+                id="filterButton"
+              >
+                <span>
+                  <i class="fa-solid fa-filter"></i>
+                  Filter
+                </span>
+              </button>
+              <button
+                class="button level-item"
+                id="js-modal-trigger"
+                data-target="addClassModal"
+              >
+                <span>
+                  <i class="fa-solid fa-plus"></i>
+                  Add
+                </span>
+              </button>
+            </div>
+          </nav>
+
+          <!-- Classes Columns -->
+          <div class="container">
+            <div
+              class="columns is-multiline is-centered is-unselectable is-capitalized"
+              id="classesColumns"
+            ></div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Add Class Modal -->
+    <div id="addClassModal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <!-- Modal Header -->
+        <header class="modal-card-head">
+          <p class="modal-card-title">Add New Class</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+
+        <!-- Modal Body -->
+        <section class="modal-card-body">
+          <!-- Class Name -->
+          <div class="field">
+            <label class="label is-unselectable">Class Name</label>
+            <input
+              class="input"
+              id="classInput"
+              type="text"
+              placeholder="Class Name"
+            />
+          </div>
+
+          <!-- Year / Semester -->
+          <div class="field">
+            <div class="level">
+              <!-- Year Select -->
+              <div class="level-item has-text-centered">
+                <label class="label is-unselectable mb-0 mr-2">Year</label>
+                <div class="select">
+                  <select id="yearSelect">
+                    <option selected>2023</option>
+                    <option>2022</option>
+                    <option>2021</option>
+                    <option>2020</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Semester Select -->
+              <div class="level-item has-text-centered">
+                <label class="label is-unselectable mb-0 mr-2">Semester</label>
+                <div class="select">
+                  <select id="semesterSelect">
+                    <option>Fall</option>
+                    <option>Spring</option>
+                    <option>Summer</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Credit Input -->
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label is-unselectable">Credits</label>
+            <input
+              class="input"
+              id="creditsInput"
+              type="number"
+              placeholder="Credits"
+            />
+          </div>
+          
+          <!-- Professor Name -->
+          <div class="field">
+            <label class="label is-unselectable">Professor Name</label>
+            <input
+              class="input"
+              id="profNameInput"
+              type="text"
+              placeholder="Professor Name"
+            />
+          </div>
+            
+          <!-- Location -->
+          <div class="field">
+            <label class="label is-unselectable">Location</label>
+            <input
+              class="input"
+              id="locationInput"
+              type="text"
+              placeholder="Location"
+            />
+          </div>
+
+        </section>
+
+        <!-- Modal Footer -->
+        <footer class="modal-card-foot">
+          <button
+            class="button is-success"
+            type="submit"
+            id="saveButton"
+            data-target="addClassModal"
+          >
+            Save changes
+          </button>
+          <button class="button" id="cancelButton">Cancel</button>
+        </footer>
+      </div>
+    </div>
+
+    <script type="module" src="home.js"></script>
+    <script
+      src="https://kit.fontawesome.com/24aac3d09d.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

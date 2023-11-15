@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello Bulma!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar has-shadow is-white">
+      <!-- Navbar Brand -->
+      <div class="navbar-brand">
+        <h1 class="navbar-item title">Grade Tracker</h1>
+      </div>
+
+      <!-- Mobile Burger -->
+      <div class="navbar-burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Navbar Menu -->
+      <div class="navbar-menu" id="nav-links">
+        <div class="navbar-end">
+          <a class="navbar-item">My Account</a>
+          <a class="navbar-item">My Cart</a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> More </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item"> About </a>
+              <a class="navbar-item"> Jobs </a>
+              <a class="navbar-item"> Contact </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item"> Report </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Body Section -->
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Hello World</h1>
+        <p class="subtitle">My first website with <strong>Bulma</strong>!</p>
+
+        <button class="button is-primary" id="navbarRedirectButton">
+          Navbar
+        </button>
+        <button class="button is-primary" id="testButton">Testing</button>
+        <button class="button is-primary" id="loginButton">Login</button>
+      </div>
+    </section>
+
+    <!-- Columns -->
+    <section class="section">
+      <div class="container">
+        <div class="columns has-text-centered is-multiline" id="testing">
+          <div class="column is-3">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+              incidunt ipsam cupiditate nihil illo atque iusto omnis ducimus
+              tempore officiis.
+            </p>
+          </div>
+          <div class="column is-6">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+              ducimus sequi libero voluptate nostrum consequatur autem nemo!
+              Obcaecati, magnam repudiandae?
+            </p>
+          </div>
+          <div class="column is-3">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+              quos eveniet iusto repellat saepe! Non, cumque. Incidunt quidem
+              temporibus impedit.
+            </p>
+          </div>
+        </div>
+      </div>
+      <input class="input" type="text" placeholder="Text input" />
+    </section>
+
+    <script src="index.js"></script>
+  </body>
+</html>

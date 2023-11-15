@@ -1,0 +1,63 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <section class="section is-fullheight">
+      <!-- Title -->
+      <div class="container mt-3 mb-6">
+        <h1 class="title has-text-centered">Welcome to Grade Tracker</h1>
+      </div>
+
+      <!-- Login Container -->
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-5-tablet is-4-desktop is-4-widescreen">
+            <div class="box">
+              <!-- Username -->
+              <div class="field">
+                <label class="label">Username</label>
+                <div class="control has-icons-left">
+                  <input class="input" type="text" placeholder="Username" />
+                  <span class="icon is-small is-left">
+                    <i class="fa-solid fa-user"></i>
+                  </span>
+                </div>
+              </div>
+              <!-- Password -->
+              <div class="field">
+                <label class="label">Password</label>
+                <div class="control has-icons-left">
+                  <input
+                    class="input"
+                    type="password"
+                    placeholder="**********"
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </div>
+              </div>
+              <!-- Login Button -->
+              <button class="button mt-5 is-primary is-fullwidth" id="loginButton" type="submit">
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="login.js"></script>
+    <script
+      src="https://kit.fontawesome.com/24aac3d09d.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
