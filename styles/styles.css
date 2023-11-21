@@ -1,3 +1,13 @@
+:root {
+	--sidebarBackground: #102a43;
+	--lightPurple: #b990ff;
+	--purple: #9446ed;
+	--text: #d9e2e6;
+	--textWhite: #ECF0F1;
+	--bodyBackground: #e8ecf0;
+	--searchbarBackground: #f7fafc;
+}
+
 *::-webkit-scrollbar {
 	width: 8px;
 }
@@ -6,4 +16,54 @@
 	background-color: lightgrey;
 	border-radius: 20px;
 	scrollbar-width: thin;
+}
+
+/* .navbar {
+	background-color: #3a6996;
+	color: #ECF0F1;
+} */
+
+.sidebar {
+	background-color: var(--sidebarBackground);
+	min-height: 100vh;
+	height: auto;
+}
+
+.search-bar {
+	background-color: var(--searchbarBackground);
+}
+
+.button-main {
+	background-color: var(--purple);
+	color: var(--textWhite);
+}
+
+.button.is-hovered, .button:hover {
+    border-color: #b5b5b5;
+    color: #cacaca;
+}
+
+.body {
+	background-color: var(--bodyBackground);
+	min-height: 100vh;
+	height: auto;
+}
+
+.menu-label {
+	color: var(--text);
+	font-weight: bold;
+}
+
+.menu-list a {
+	color: var(--text);
+}
+
+.menu-list a.is-active {
+	border-left: thick solid var(--lightPurple);
+	color: var(--lightPurple);
+	background-color: var(--sidebarBackground);
+}
+
+a.box:focus, a.box:hover {
+    box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px var(--lightPurple);
 }

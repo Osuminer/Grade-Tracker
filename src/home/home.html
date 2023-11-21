@@ -4,46 +4,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Classes</title>
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
     <link rel="stylesheet" href="../../styles/styles.css" />
   </head>
-  <body class="has-navbar-fixed-top" style="background-color: #ECF0F1; height: auto">
+  <body class="body">
     <!-- Nav Bar -->
-    <nav class="navbar is-fixed-top is-white" style="background-color: #3498db; color: #ECF0F1;">
-      <!-- Navbar Brand -->
+    <!-- <nav class="navbar is-fixed-top">
       <div class="navbar-brand">
         <a id="logoButton">
           <h1 class="navbar-item title is-unselectable">Grade Tracker</h1>
         </a>
       </div>
 
-      <!-- Navbar Menu -->
       <div class="navbar-menu" id="nav-links">
         <div class="navbar-end">
           <a class="navbar-item">My Account</a>
         </div>
       </div>
-    </nav>
+    </nav> -->
 
     <!-- Main Section -->
     <div class="columns mb-0">
       <!-- Sidebar Column -->
-      <div class="column is-one-fifth is-unselectable" style="background-color: #5DADE2; color: #2980B9; height: auto">
+      <div class="column is-one-fifth is-unselectable sidebar">
         <aside class="menu px-4 py-5">
           <!-- Schedule Label -->
           <p class="menu-label">Schedule</p>
           <ul class="menu-list">
-            <li><a style="background-color: #5DADE2;">Classes</a></li>
-            <li><a>Calendar</a></li>
+            <li><a class="menu-item is-active">Classes</a></li>
+            <li><a class="menu-item">Calendar</a></li>
           </ul>
 
           <!-- Calculators Label -->
           <p class="menu-label">Calculators</p>
           <ul class="menu-list">
-            <li><a>GPA Calculator</a></li>
-            <li><a>Grade Calculator</a></li>
+            <li><a class="menu-item">GPA Calculator</a></li>
+            <li><a class="menu-item">Grade Calculator</a></li>
           </ul>
         </aside>
       </div>
@@ -60,17 +58,16 @@
                 <div class="field has-addons">
                   <p class="control has-icons-left">
                     <input
-                      class="input"
+                      class="input search-bar"
                       type="text"
                       placeholder="Find a class"
-                      style="background-color: #ECF0F1; color: #2980B9;"
                     />
                     <span class="icon is-small is-left">
                       <i class="fa-solid fa-magnifying-glass"></i>
                     </span>
                   </p>
                   <p class="control">
-                    <button class="button" style="background-color: #3498db; color: #ECF0F1;">Search</button>
+                    <button class="button button-main">Search</button>
                   </p>
                 </div>
               </div>
@@ -79,9 +76,8 @@
             <!-- Right Side -->
             <div class="level-right">
               <button
-                class="button level-item has-icons-left"
+                class="button level-item has-icons-left button-main"
                 id="refreshButton"
-                style="background-color: #3498db; color: #ECF0F1;"
               >
                 <span>
                   <i class="fa-solid fa-arrows-rotate"></i>
@@ -89,9 +85,8 @@
                 </span>
               </button>
               <button
-                class="button level-item has-icons-left"
+                class="button level-item has-icons-left button-main"
                 id="filterButton"
-                style="background-color: #3498db; color: #ECF0F1;"
               >
                 <span>
                   <i class="fa-solid fa-filter"></i>
@@ -99,10 +94,9 @@
                 </span>
               </button>
               <button
-                class="button level-item"
+                class="button level-item button-main"
                 id="js-modal-trigger"
                 data-target="addClassModal"
-                style="background-color: #3498db; color: #ECF0F1;"
               >
                 <span>
                   <i class="fa-solid fa-plus"></i>
