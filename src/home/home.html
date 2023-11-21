@@ -9,21 +9,14 @@
     />
     <link rel="stylesheet" href="../../styles/styles.css" />
   </head>
-  <body class="has-navbar-fixed-top">
+  <body class="has-navbar-fixed-top" style="background-color: #ECF0F1; height: auto">
     <!-- Nav Bar -->
-    <nav class="navbar has-shadow is-white is-fixed-top">
+    <nav class="navbar is-fixed-top is-white" style="background-color: #3498db; color: #ECF0F1;">
       <!-- Navbar Brand -->
       <div class="navbar-brand">
         <a id="logoButton">
           <h1 class="navbar-item title is-unselectable">Grade Tracker</h1>
         </a>
-      </div>
-
-      <!-- Mobile Burger -->
-      <div class="navbar-burger" id="burger">
-        <span></span>
-        <span></span>
-        <span></span>
       </div>
 
       <!-- Navbar Menu -->
@@ -35,14 +28,14 @@
     </nav>
 
     <!-- Main Section -->
-    <div class="columns is-fullheight-with-navbar">
+    <div class="columns mb-0">
       <!-- Sidebar Column -->
-      <div class="column is-one-fifth is-unselectable">
+      <div class="column is-one-fifth is-unselectable" style="background-color: #5DADE2; color: #2980B9; height: auto">
         <aside class="menu px-4 py-5">
           <!-- Schedule Label -->
           <p class="menu-label">Schedule</p>
           <ul class="menu-list">
-            <li><a class="is-active">Classes</a></li>
+            <li><a style="background-color: #5DADE2;">Classes</a></li>
             <li><a>Calendar</a></li>
           </ul>
 
@@ -70,13 +63,14 @@
                       class="input"
                       type="text"
                       placeholder="Find a class"
+                      style="background-color: #ECF0F1; color: #2980B9;"
                     />
                     <span class="icon is-small is-left">
                       <i class="fa-solid fa-magnifying-glass"></i>
                     </span>
                   </p>
                   <p class="control">
-                    <button class="button">Search</button>
+                    <button class="button" style="background-color: #3498db; color: #ECF0F1;">Search</button>
                   </p>
                 </div>
               </div>
@@ -87,6 +81,7 @@
               <button
                 class="button level-item has-icons-left"
                 id="refreshButton"
+                style="background-color: #3498db; color: #ECF0F1;"
               >
                 <span>
                   <i class="fa-solid fa-arrows-rotate"></i>
@@ -96,6 +91,7 @@
               <button
                 class="button level-item has-icons-left"
                 id="filterButton"
+                style="background-color: #3498db; color: #ECF0F1;"
               >
                 <span>
                   <i class="fa-solid fa-filter"></i>
@@ -106,6 +102,7 @@
                 class="button level-item"
                 id="js-modal-trigger"
                 data-target="addClassModal"
+                style="background-color: #3498db; color: #ECF0F1;"
               >
                 <span>
                   <i class="fa-solid fa-plus"></i>
@@ -120,7 +117,9 @@
             <div
               class="columns is-multiline is-centered is-unselectable is-capitalized"
               id="classesColumns"
-            ></div>
+            >
+          
+          </div>
           </div>
         </section>
       </div>

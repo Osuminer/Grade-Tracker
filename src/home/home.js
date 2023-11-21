@@ -137,12 +137,9 @@ saveButton.addEventListener("click", () => {
 
 // Load Classes ------------------------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", async () => {
-  const classList = await ApiWrapper.getAllClasses();
-
-  // console.log(classList)
+  refreshClasses()
 
   classList.forEach((item) => {
-    // console.log(item)
     addClass(item);
   });
 });
