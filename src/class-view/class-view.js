@@ -2,10 +2,10 @@ import { classObject, gradeObject } from "../components/objects.js";
 import * as ApiWrapper from "../components/api-wrapper.js";
 
 // Logo Click --------------------------------------------------------------------------------------------------------------
-const logoButton = document.getElementById("logoButton");
-logoButton.addEventListener("click", () => {
-  window.location.href = "../home/home.html";
-});
+// const logoButton = document.getElementById("logoButton");
+// logoButton.addEventListener("click", () => {
+//   window.location.href = "../home/home.html";
+// });
 
 // Add a class with multiple arguments -------------------------------------------------------------------------------------
 function addAssignementToTable(gradeData) {
