@@ -49,7 +49,7 @@ export async function addClass(classData) {
         semester: classData.semester,
         prof: classData.professor,
         location: classData.classLocation,
-        credits: classData.credits
+        credits: classData.credits,
       }),
     });
 
@@ -145,18 +145,21 @@ export async function getClassById(uuid) {
 // Add assignment ---------------------------------------------------------------------------------------------------------
 export async function addAssignment(gradeData) {
   try {
-    const response = await fetch(`${baseURL}/class/${gradeData.parentUUID}/add`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        assignment_name: gradeData.title,
-        score: gradeData.score,
-        total_score: gradeData.total,
-        date_due: gradeData.dateDue,
-      }),
-    });
+    const response = await fetch(
+      `${baseURL}/class/${gradeData.parentUUID}/add`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          assignment_name: gradeData.title,
+          score: gradeData.score,
+          total_score: gradeData.total,
+          date_due: gradeData.dateDue,
+        }),
+      }
+    );
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -173,19 +176,21 @@ export async function addAssignment(gradeData) {
 // Add assignment ---------------------------------------------------------------------------------------------------------
 export async function editAssignment(gradeData) {
   try {
-    const response = await fetch(`${baseURL}/updateAssignment/${gradeData.uuid}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        assignment_name: gradeData.title,
-        score: gradeData.score,
-        total_score: gradeData.total,
-        date_due: gradeData.dateDue,
-      }),
-    });
-
+    const response = await fetch(
+      `${baseURL}/updateAssignment/${gradeData.uuid}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          assignment_name: gradeData.title,
+          score: gradeData.score,
+          total_score: gradeData.total,
+          date_due: gradeData.dateDue,
+        }),
+      }
+    );
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);

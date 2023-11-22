@@ -33,21 +33,10 @@
 	background-color: var(--searchbarBackground);
 }
 
-/* .button-main {
-	background-color: var(--purple);
-	color: var(--textWhite);
-}
-
-.button.is-hovered, .button:hover {
-    border-color: #b5b5b5;
-    color: #cacaca;
-} */
-
 .button.is-hovered, .button:hover {
     /* border-color: #b5b5b5; */
 	background-color: lightgray;
 }
-
 
 .body {
 	background-color: var(--bodyBackground);
