@@ -20,7 +20,6 @@ function addClass(classData) {
 
   // Add click event listener to the new anchor element
   newClass.addEventListener("click", () => {
-    ApiWrapper.getClassGrades(classData.uuid);
     window.location.href = `../class-view/class-view.html?id=${classData.uuid}`;
   });
 
