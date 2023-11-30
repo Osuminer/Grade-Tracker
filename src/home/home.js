@@ -20,7 +20,6 @@ function addClass(classData) {
 
   // Add click event listener to the new anchor element
   newClass.addEventListener("click", () => {
-    ApiWrapper.getClassGrades(classData.uuid);
     window.location.href = `../class-view/class-view.html?id=${classData.uuid}`;
   });
 
@@ -138,10 +137,6 @@ saveButton.addEventListener("click", () => {
 // Load Classes ------------------------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", async () => {
   refreshClasses()
-
-  classList.forEach((item) => {
-    addClass(item);
-  });
 });
 
 // Refresh Classes ---------------------------------------------------------------------------------------------------------
@@ -162,7 +157,7 @@ refreshButton.addEventListener("click", async () => {
 });
 
 // Logo Click --------------------------------------------------------------------------------------------------------------
-const logoButton = document.getElementById("logoButton")
-logoButton.addEventListener('click', () => {
-  window.location.href("../home/home.js")
-})
+// const logoButton = document.getElementById("logoButton")
+// logoButton.addEventListener('click', () => {
+//   window.location.href("../home/home.js")
+// })
